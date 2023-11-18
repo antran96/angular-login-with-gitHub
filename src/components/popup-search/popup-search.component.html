@@ -1,0 +1,34 @@
+<div class="popup-container bg-slate-950 p-7 absolute rounded-xl">
+    <form [formGroup]="formData">
+        <div class="flex flex-col gap-2 my-2">
+            <label class="px-2" htmlFor="owner">Owner</label>
+            <input pInputText id="owner" formControlName="owner" />
+        </div>
+        <div class="flex flex-col gap-2 my-2" *ngIf="onShow('language')">
+            <label class="px-2" htmlFor="language">Programming language</label>
+            <p-dropdown [options]="listLanguages" optionLabel="name" formControlName="language"></p-dropdown>
+        </div>
+        <div class="flex flex-col gap-2 my-2" *ngIf="onShow('date')">
+            <label class="px-2" htmlFor="date">Minimum created date</label>
+            <p-calendar formControlName="date" [showIcon]="true"></p-calendar>
+        </div>
+        <div class="flex flex-col gap-2 my-2" *ngIf="onShow('size')">
+            <label class="px-2" htmlFor="size">Repositories size: 
+                {{formData.value.size[0] + 'kb' + ' - ' + formData.value.size[1] + 'Mb'}}
+            </label>
+            <p-slider formControlName="size" [range]="true"></p-slider>
+        </div>
+    </form>
+    <div class="add-filter relative">
+        <span (click)="onAdd()">+ Add more filter</span>
+        <div class="menu absolute bg-white rounded-xl p-3" *ngIf="isAdd">
+            <div class="header">Select Filter Type
+                <div class="arrow"></div>
+            </div>
+            <div class="item px-1 py-3" *ngFor="let item of listFilterType, index as index">
+                {{item.title}}
+                <span (click)="onSelect(item, index)"><i class="pi pi-plus-circle"></i></span>
+            </div>
+        </div>
+    </div>
+</div>

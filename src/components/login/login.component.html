@@ -1,0 +1,15 @@
+<div class="bg-slate-950 h-screen w-screen login-container p-7">
+   <div class="box">
+    <div class="borderLine"></div>
+    <form class="flex justify-center items-center flex-col">
+        <h2>Sign in</h2>
+        <app-input type="text" label="Username"></app-input>
+        <app-input type="text" label="Password"></app-input>
+        <a class="p-4 bg-white text-black w-4/5 mt-7 rounded" href="https://github.com/login/oauth/authorize?client_id=97a4dad514ad40370bbc&redirect_uri=http://localhost:4200/login">
+            <span class="mx-3"><i class="fa-brands fa-github fill-black"></i></span>
+            Login with GitHub
+        </a>
+        <button class="p-4 bg-white text-black w-4/5 my-5 rounded" (click)="onLogin()">Login</button>
+    </form>
+   </div>
+</div>

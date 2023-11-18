@@ -1,0 +1,47 @@
+.popup {
+    &-container {
+        width: 100%;
+        top: 4%;
+        box-shadow: 0 0 0.4rem rgba($color: #000000, $alpha: 0.5);
+        span {
+            display: block;
+            margin: 1em 0.2em;
+            color: blue;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+        .add-filter {
+            .menu {
+                box-shadow: 0 0 0.4rem rgba($color: #000000, $alpha: 0.5);
+                .header {
+                    position: relative;
+                    padding: 0.3em;
+                    text-align: center;
+                    border-bottom: solid 1px gray;
+                    .arrow {
+                        position: absolute;
+                        transform: rotate(45deg);
+                        top: -70%;
+                        left: 43%;
+                        width: 20px;
+                        height: 20px;
+                        background-color: white;
+                        z-index: 1;
+                    }
+                }
+                .item {
+                    display: grid;
+                    grid-template-columns: 80% 20%;
+                    i, svg {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        &:hover {
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

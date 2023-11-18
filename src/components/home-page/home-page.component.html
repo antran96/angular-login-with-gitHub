@@ -1,0 +1,26 @@
+<div class="home-container relative">
+    <div class="search-area">
+        <span class="p-input-icon-right">
+            <i class="pi pi-search"></i>
+            <input type="text" pInputText [(ngModel)]="search" (ngModelChange)="onChange($event)"/>
+        </span>
+        <p-button label="Advanced Search" (click)="isPopup = !isPopup"></p-button>
+    </div>
+    <div class="content-area">
+        <ng-container *ngFor="let item of data">
+            <div class="border border-cyan-400 p-5 m-5 rounded-xl item" (click)="onClick(item)">
+                <div class="name">
+                    <img src="{{item.owner.avatar_url}}">
+                    <span class="text-slate-500">{{item.name}}</span>
+                </div>
+                <div class="text-slate-400 mb-3">{{item.description}}</div>
+                <div class="note">
+                    <span>Language: {{item.language}}</span>
+                    <span class="icon"><i class="pi pi-star"></i>Start: {{item.stargazers_count}}</span>
+                    <span>Updated on: {{item.updated_at}}</span>
+                </div>
+            </div>
+        </ng-container>
+    </div>
+    <app-popup-search *ngIf="isPopup"></app-popup-search>
+</div>

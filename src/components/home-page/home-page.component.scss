@@ -1,0 +1,51 @@
+@import "../../styles.scss";
+.home {
+    &-container {
+        width: 100%;
+        .search-area {
+            position: sticky;
+            top: 0;
+            padding-top: 0 !important;
+            margin-top: 1rem;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            gap: 1em;
+            z-index: 1;
+            i, svg {
+                cursor: pointer;
+            }
+            input {
+                width: 300px;
+            }
+        }
+        .content-area {
+            .item {
+                box-shadow: 0 0 0.4em rgba($color: black, $alpha: 0.1);
+                &:hover {
+                    cursor: pointer;
+                    box-shadow: 0 0 0.8em $--dark-base;
+                }
+                .name {
+                    display: flex;
+                    gap: 0.5em;
+                    img {
+                        width: 1em;
+                        height: 1em;
+                    }
+                }
+                .note {
+                    display: flex;
+                    gap: 2em;
+                    .icon {
+                        display: flex;
+                        gap: 0.5em;
+                        i, svg {
+                            color: orange;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
